@@ -10,7 +10,7 @@ driver = webdriver.Chrome(options=options)
 browser.config.driver = driver
 
 
-@pytest.fixture(scope='function', autouse=True)
+@pytest.fixture(scope='session', autouse=True)
 def browser_management():
     browser.config.base_url = 'https://demoqa.com'
     browser.config.set_value_by_js = True
