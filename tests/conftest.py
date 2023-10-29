@@ -16,7 +16,7 @@ def browser_management():
     browser.config.set_value_by_js = True
     browser.config.timeout = 2.0
     browser.config.window_width = 1400
-    browser.config.window_heigth = 1200
+    browser.config.window_height = 1200
 
 
     yield
