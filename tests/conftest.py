@@ -5,7 +5,6 @@ from selenium import webdriver
 
 options = Options()
 options.add_argument("--remote-debugging-port=9222")
-# options.add_argument('--headless=new')
 driver = webdriver.Chrome(options=options)
 browser.config.driver = driver
 
@@ -17,8 +16,5 @@ def browser_management():
     browser.config.timeout = 2.0
     browser.config.window_width = 1400
     browser.config.window_height = 1200
-
-
     yield
-
     browser.quit()
