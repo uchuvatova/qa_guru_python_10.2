@@ -1,7 +1,9 @@
 from demoqa_tests.data.users import User, Gender
 from demoqa_tests.pages.shortRegistrationPage import ShortRegistrationPage
+import allure
 
 
+@allure.title("Successful fill form")
 def test_success_simple_registration():
     ira = User(
         first_name='Ira',
@@ -20,11 +22,13 @@ def test_success_simple_registration():
         city='Delhi'
     )
     registration_page = ShortRegistrationPage()
-    registration_page.open()
+    with allure.step("Open registrations form"):
+        registration_page.open()
 
     # WHEN
-    registration_page.open()
-    registration_page.register(ira)
+    with allure.step("Fill form"):
+        registration_page.register(ira)
 
     # THEN
-    registration_page.user_should_be_registered(ira)
+    with allure.step("Check form results"):
+        registration_page.user_should_be_registered(ira)
