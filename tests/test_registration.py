@@ -2,7 +2,6 @@ from selene import have
 from demoqa_tests.pages.registrationPage import RegistrationPage
 
 
-
 def test_success_registration():
     registration_page = RegistrationPage()
 
