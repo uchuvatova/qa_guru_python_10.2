@@ -4,7 +4,7 @@ import allure
 
 
 @allure.title("Successful fill form")
-def test_success_simple_registration():
+def test_success_simple_registration(setup_browser):
     ira = User(
         first_name='Ira',
         last_name='Uchuvatova',
