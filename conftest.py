@@ -1,17 +1,10 @@
 import pytest
-
+from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selene import Browser, Config, browser
 
 from utils import attach
-import pytest
 
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selene import Browser, Config
-
-from utils import attach
 
 @pytest.fixture(scope='function')
 def setup_browser(request):
@@ -29,8 +22,6 @@ def setup_browser(request):
         command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub",
         options=options
     )
-
-    #browser = Browser(Config(driver))
     browser.config.driver = driver
 
     yield browser
@@ -41,6 +32,8 @@ def setup_browser(request):
     attach.add_video(browser)
 
     browser.quit()
+
+
 '''
 import pytest
 from selene.support.shared import browser

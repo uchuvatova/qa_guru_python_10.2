@@ -1,9 +1,17 @@
+from allure_commons.types import Severity
+
 from demoqa_tests.data.users import User, Gender
 from demoqa_tests.pages.shortRegistrationPage import ShortRegistrationPage
 import allure
 
 
 @allure.title("Successful fill form")
+@allure.tag("web")
+@allure.severity(Severity.CRITICAL)
+@allure.label("owner", "irauchuvatova")
+@allure.feature("Задачи в репозитории")
+@allure.story("Пользователь заполняет регистрационную форму")
+@allure.link("https://demoqa.com/automation-practice-form", name="Ссылка на форму регистрации")
 def test_success_simple_registration(setup_browser):
     ira = User(
         first_name='Ira',
