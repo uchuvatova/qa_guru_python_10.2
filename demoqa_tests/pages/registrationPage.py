@@ -5,7 +5,6 @@ from selene.support.conditions import be, have
 from selene.support.shared import browser
 
 import tests
-from conftest import setup_browser
 
 
 class RegistrationPage:
