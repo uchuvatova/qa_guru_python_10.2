@@ -6,7 +6,7 @@ from demoqa_tests.pages.registrationPage import RegistrationPage
 
 
 @allure.title("Successful fill form")
-def test_success_registration():
+def test_success_registration(setup_browser):
     registration_page = RegistrationPage()
     with allure.step("Open registration form"):
         registration_page.open()

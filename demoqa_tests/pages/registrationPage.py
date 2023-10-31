@@ -5,9 +5,11 @@ from selene.support.conditions import be, have
 from selene.support.shared import browser
 
 import tests
+from conftest import setup_browser
 
 
 class RegistrationPage:
+    browser = setup_browser
     def __init__(self):
         self.registered_user_data = browser.element(".table").all("td").even
 
