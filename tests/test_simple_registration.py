@@ -22,7 +22,7 @@ def test_success_simple_registration():
         city='Delhi'
     )
     registration_page = ShortRegistrationPage()
-    with allure.step("Open registrations form"):
+    with allure.step("Open registration form"):
         registration_page.open()
 
     # WHEN
@@ -30,5 +30,5 @@ def test_success_simple_registration():
         registration_page.register(ira)
 
     # THEN
-    with allure.step("Check form results"):
+    with allure.step("Check results"):
         registration_page.user_should_be_registered(ira)
