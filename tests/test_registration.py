@@ -18,17 +18,27 @@ def test_success_registration(setup_browser):
     with allure.step("Open registration form"):
         registration_page.open()
     # WHEN
-    with allure.step("Fill form"):
+    with allure.step("Fill first name"):
         registration_page.fill_first_name('Ira')
+    with allure.step("Fill last name"):
         registration_page.fill_last_name('Uchuvatova')
+    with allure.step("Choose hobby"):
         registration_page.choose_hobbies('Reading')
+    with allure.step("Fill date of birth"):
         registration_page.fill_date_of_birth('1986', 'April', 26)
+    with allure.step("Fill email"):
         registration_page.fill_email('example@mail.ru')
+    with allure.step("Choose gender"):
         registration_page.choose_gender('Female')
+    with allure.step("Fill phone"):
         registration_page.fill_phone('1234567890')
+    with allure.step("Choose subjects"):
         registration_page.choose_subjects('Maths')
+    with allure.step("Add photo"):
         registration_page.add_photo('resourses/1.png')
+    with allure.step("Fill address"):
         registration_page.fill_address('Sunstreet, 28', 'NCR', 'Delhi')
+    with allure.step("Submit form"):
         registration_page.submit()
 
     # THEN
