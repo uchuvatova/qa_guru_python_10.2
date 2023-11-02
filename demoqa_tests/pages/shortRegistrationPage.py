@@ -11,7 +11,7 @@ class ShortRegistrationPage:
         self.registered_user_data = browser.element(".table").all("td").even
 
     def open(self):
-        browser.open("https://demoqa.com/automation-practice-form")
+        browser.open("/automation-practice-form")
         browser.execute_script(
             'document.querySelector(".body-height").style.transform = "scale(.5)"'
         )
