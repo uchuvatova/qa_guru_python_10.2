@@ -2,7 +2,7 @@ import allure
 from allure_commons.types import Severity
 from selene import have
 
-from conftest import setup_browser
+#from conftest import setup_browser
 from demoqa_tests.pages.registrationPage import RegistrationPage
 
 

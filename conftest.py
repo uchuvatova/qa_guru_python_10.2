@@ -1,3 +1,5 @@
+import os
+
 import pytest
 from selene import browser
 from selenium import webdriver
@@ -18,10 +20,10 @@ def setup_browser(request):
         }
     }
     options.capabilities.update(selenoid_capabilities)
-    driver = webdriver.Remote(
-        command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub",
-        options=options
-    )
+    login = os.getenv('LOGIN')
+    password = os.getenv('PASSWORD')
+    driver = webdriver.Remote(command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
+                              options=options)
     browser.config.driver = driver
     browser.config.base_url = 'https://demoqa.com'
 
