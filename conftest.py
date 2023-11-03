@@ -1,13 +1,16 @@
 import os
 
 import pytest
+from dotenv import load_dotenv
 from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 from utils import attach
 
-
+@pytest.fixture(scope='session', autouse=True)
+def load_env():
+    load_dotenv()
 @pytest.fixture(scope='function')
 def setup_browser(request):
     options = Options()
